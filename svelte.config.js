@@ -18,7 +18,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/samiratravel', // Set this to match your GitHub Pages URL
+			base: process.env.NODE_ENV === 'production' ? '/samiratravel' : '',
 		},
 	}
 };
