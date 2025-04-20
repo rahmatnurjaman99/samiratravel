@@ -3,6 +3,7 @@
   import { header as headerData, contact, header } from "$lib/data";
   import { fade, fly } from "svelte/transition";
   import { currentMenuActive } from "$lib/stores.svelte.js";
+  import { base } from "$app/paths";
   let { pageYOffset } = $props();
 
   let showMobileMenu = $state(false);
@@ -53,13 +54,13 @@
               >
                 <ul class="navigation clearfix">
                   <li class:current={currentMenuActive.current == ""}>
-                    <a href="/" onclick={() => (currentMenuActive.current = "")}
+                    <a href={`${base}`} onclick={() => (currentMenuActive.current = "")}
                       >Beranda</a
                     >
                   </li>
                   <li class:current={currentMenuActive.current == "about"}>
                     <a
-                      href="/#about"
+                      href={`${base}/#about`}
                       onclick={() => (currentMenuActive.current = "about")}
                       >Tentang Kami</a
                     >
@@ -69,7 +70,7 @@
                       "tabungan-umroh"}
                   >
                     <a
-                      href="/tabungan-umroh"
+                      href={`${base}/tabungan-umroh`}
                       onclick={() =>
                         (currentMenuActive.current = "tabungan-umroh")}
                       >Tabungan Umroh</a
@@ -77,7 +78,7 @@
                   </li>
                   <li class:current={currentMenuActive.current == "promo"}>
                     <a
-                      href="/promo"
+                      href={`${base}/promo`}
                       onclick={() => (currentMenuActive.current = "promo")}
                       >Promo</a
                     >
@@ -113,7 +114,7 @@
       <div class="outer-box">
         <div class="left-column">
           <figure class="logo-box">
-            <a href="/" onclick={() => (currentMenuActive.current = "")}><img src={headerData.logo_path} alt="logo" /></a>
+            <a href={`${base}`} onclick={() => (currentMenuActive.current = "")}><img src={headerData.logo_path} alt="logo" /></a>
           </figure>
           <div class="menu-area">
             <nav class="main-menu clearfix">
@@ -127,14 +128,14 @@
                   <ul class="navigation clearfix">
                     <li class:current={currentMenuActive.current == ""}>
                       <a
-                        href="/"
+                        href={`${base}`}
                         onclick={() => (currentMenuActive.current = "")}
                         >Beranda</a
                       >
                     </li>
                     <li class:current={currentMenuActive.current == "about"}>
                       <a
-                        href="/#about"
+                        href={`${base}/#about`}
                         onclick={() => (currentMenuActive.current = "about")}
                         >Tentang Kami</a
                       >
@@ -144,7 +145,7 @@
                         "tabungan-umroh"}
                     >
                       <a
-                        href="/tabungan-umroh"
+                        href={`${base}/tabungan-umroh`}
                         onclick={() =>
                           (currentMenuActive.current = "tabungan-umroh")}
                         >Tabungan Umroh</a
@@ -152,7 +153,7 @@
                     </li>
                     <li class:current={currentMenuActive.current == "promo"}>
                       <a
-                        href="/promo"
+                        href={`${base}/promo`}
                         onclick={() => (currentMenuActive.current = "promo")}
                         >Promo</a
                       >
@@ -196,7 +197,7 @@
   >
   <nav class="menu-box">
     <div class="nav-logo">
-      <a href="/" onclick={() => (currentMenuActive.current = "")}
+      <a href={`${base}`} onclick={() => (currentMenuActive.current = "")}
         ><img src="{headerData.logo_path}" alt="logo" title="" /></a
       >
     </div>
@@ -211,7 +212,7 @@
           <ul class="navigation clearfix">
             <li class:current={currentMenuActive.current == ""}>
               <a
-                href="/"
+                href={`${base}`}
                 onclick={() => {
                   showMobileMenu = !showMobileMenu;
                   currentMenuActive.current = "";
@@ -220,7 +221,7 @@
             </li>
             <li class:current={currentMenuActive.current == "about"}>
               <a
-                href="/#about"
+                href={`${base}/#about`}
                 onclick={() => {
                   showMobileMenu = !showMobileMenu;
                   currentMenuActive.current = "about";
@@ -229,7 +230,7 @@
             </li>
             <li class:current={currentMenuActive.current == "tabungan-umroh"}>
               <a
-                href="/tabungan-umroh"
+                href={`${base}/tabungan-umroh`}
                 onclick={() => {
                   showMobileMenu = !showMobileMenu;
                   currentMenuActive.current = "tabungan-umroh";
@@ -238,7 +239,7 @@
             </li>
             <li class:current={currentMenuActive.current == "promo"}>
               <a
-                href="/promo"
+                href={`${base}/promo`}
                 onclick={() => {
                   showMobileMenu = !showMobileMenu;
                   currentMenuActive.current = "promo";

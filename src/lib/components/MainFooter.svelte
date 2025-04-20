@@ -2,6 +2,7 @@
   import { currentMenuActive } from "$lib/stores.svelte";
   import { footer as footerData, contact } from "$lib/data";
   import ButtonJoin from "./ButtonJoin.svelte";
+  import { base } from "$app/paths";
 
   function formatPhoneNumber(phoneNumber: string) {
     return phoneNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{4})/, "$1-$2-$3-$4");
@@ -19,7 +20,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 col-sm-12 logo-column">
             <figure class="footer-logo">
-              <a href="/" onclick={() => (currentMenuActive.current = "")}><img src={footerData.logo_path} alt="logo" /></a>
+              <a href={`${base}`} onclick={() => (currentMenuActive.current = "")}><img src={footerData.logo_path} alt="logo" /></a>
             </figure>
           </div>
         </div>
@@ -47,7 +48,7 @@
                 <ul class="links-list clearfix">
                   <li>
                     <a
-                      href="/"
+                      href={`${base}`}
                       aria-label="Beranda"
                       onclick={() => {
                         currentMenuActive.current = "";
@@ -56,7 +57,7 @@
                   </li>
                   <li>
                     <a
-                      href="/#about"
+                      href="{`${base}/#about`}"
                       onclick={() => {
                         currentMenuActive.current = "about";
                       }}>Tentang Kami</a
@@ -64,7 +65,7 @@
                   </li>
                   <li>
                     <a
-                      href="/tabungan-umroh"
+                      href={`${base}/tabungan-umroh`}
                       onclick={() => {
                         currentMenuActive.current = "tabungan-umroh";
                       }}>Tabungan Umroh</a
@@ -72,7 +73,7 @@
                   </li>
                   <li>
                     <a
-                      href="/promo"
+                      href={`${base}/promo`}
                       onclick={() => {
                         currentMenuActive.current = "promo";
                       }}>Promo</a
