@@ -32,7 +32,7 @@
       <div class="outer-box">
         <div class="left-column">
           <figure class="logo-box">
-            <a href="/" onclick={() => (currentMenuActive.current = "")}><img src={headerData.logo_path} alt="" /></a>
+            <a href={`${base}`} onclick={() => (currentMenuActive.current = "")}><img src={headerData.logo_path} alt="" /></a>
           </figure>
           <div class="menu-area">
             <!--Mobile Navigation Toggler-->
